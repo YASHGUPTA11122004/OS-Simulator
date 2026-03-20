@@ -1,1 +1,150 @@
+/* ─── BADGES ──────────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  font-size: 9px;
+  padding: 2px 7px;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.badge.running  { background: rgba(0,255,136,.15); color: var(--green);  border: 1px solid rgba(0,255,136,.3); }
+.badge.waiting  { background: rgba(245,158,11,.15); color: var(--amber);  border: 1px solid rgba(245,158,11,.3); }
+.badge.ready    { background: rgba(59,158,255,.15);  color: var(--blue);   border: 1px solid rgba(59,158,255,.3); }
+.badge.terminated { background: rgba(255,71,87,.15); color: var(--red);   border: 1px solid rgba(255,71,87,.3); }
+.badge.blocked  { background: rgba(139,92,246,.15); color: var(--purple); border: 1px solid rgba(139,92,246,.3); }
 
+/* ─── PROCESS TABLE ───────────────────────────────────────── */
+.process-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.process-table th {
+  text-align: left;
+  padding: 8px 12px;
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+}
+.process-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); color: var(--dim); }
+.process-table tr:hover td { background: var(--surface2); color: var(--text); }
+.pid { font-weight: 600; color: var(--cyan); }
+
+/* ─── INPUTS ──────────────────────────────────────────────── */
+.input-row { display: flex; gap: 8px; align-items: flex-end; flex-wrap: wrap; margin-bottom: 12px; }
+.input-group { display: flex; flex-direction: column; gap: 4px; }
+.input-label { font-size: 9px; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; }
+.input {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 7px 10px;
+  border-radius: 3px;
+  outline: none;
+  width: 90px;
+  transition: border .15s;
+}
+.input:focus { border-color: var(--green); }
+.input.wide { width: 130px; }
+select.input { cursor: pointer; }
+
+/* ─── BUTTONS ─────────────────────────────────────────────── */
+.btn {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all .15s;
+  font-weight: 500;
+}
+.btn-g     { background: transparent; border: 1px solid var(--green);  color: var(--green); }
+.btn-g:hover { background: rgba(0,255,136,.1); }
+.btn-r     { background: transparent; border: 1px solid var(--red);    color: var(--red); }
+.btn-r:hover { background: rgba(255,71,87,.1); }
+.btn-b     { background: transparent; border: 1px solid var(--blue);   color: var(--blue); }
+.btn-b:hover { background: rgba(59,158,255,.1); }
+.btn-a     { background: transparent; border: 1px solid var(--amber);  color: var(--amber); }
+.btn-a:hover { background: rgba(245,158,11,.1); }
+.btn-solid { background: var(--green); color: var(--bg); border: none; }
+.btn-solid:hover { background: var(--green2); }
+
+/* ─── GANTT CHART ─────────────────────────────────────────── */
+.gantt-wrap { overflow-x: auto; padding-bottom: 8px; }
+.gantt { display: flex; height: 36px; align-items: stretch; min-width: max-content; }
+.gantt-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  border-right: 1px solid var(--bg);
+  min-width: 30px;
+  transition: opacity .2s;
+}
+.gantt-block:hover { opacity: .8; }
+.gantt-ticks { display: flex; min-width: max-content; }
+.gantt-tick { font-size: 9px; color: var(--muted); text-align: left; padding-top: 3px; }
+
+/* ─── METRICS ─────────────────────────────────────────────── */
+.metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 16px; }
+.metric { background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 12px; text-align: center; }
+.metric-val { font-size: 20px; font-weight: 700; color: var(--green); }
+.metric-label { font-size: 9px; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 3px; }
+
+/* ─── LOG ─────────────────────────────────────────────────── */
+.log {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 10px;
+  height: 120px;
+  overflow-y: auto;
+  font-size: 10px;
+  color: var(--dim);
+}
+.log-entry { padding: 2px 0; border-bottom: 1px solid rgba(255,255,255,.03); }
+.log-entry .ts { color: var(--muted); margin-right: 6px; }
+.log-entry.ok .msg   { color: var(--green); }
+.log-entry.warn .msg { color: var(--amber); }
+.log-entry.err .msg  { color: var(--red); }
+.log-entry.info .msg { color: var(--blue); }
+
+/* ─── OVERVIEW CARDS ──────────────────────────────────────── */
+.overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 20px; }
+.ov-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 14px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.ov-card:hover { border-color: var(--border2); background: var(--surface2); }
+.ov-icon { font-size: 22px; margin-bottom: 8px; }
+.ov-title { font-size: 11px; color: var(--text); font-weight: 500; letter-spacing: .5px; }
+.ov-desc { font-size: 10px; color: var(--dim); margin-top: 3px; line-height: 1.5; }
+
+/* ─── SYNC COMPONENTS ─────────────────────────────────────── */
+.resource-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 12px; }
+.resource-title { font-size: 10px; color: var(--cyan); letter-spacing: 1px; margin-bottom: 8px; }
+.thread-list { display: flex; flex-direction: column; gap: 4px; }
+.thread-item { font-size: 10px; padding: 5px 8px; border-radius: 2px; display: flex; align-items: center; gap: 6px; }
+.thread-item.locked  { background: rgba(255,71,87,.1);  color: var(--red);   border: 1px solid rgba(255,71,87,.2); }
+.thread-item.free    { background: rgba(0,255,136,.1);  color: var(--green); border: 1px solid rgba(0,255,136,.2); }
+.thread-item.waiting { background: rgba(245,158,11,.1); color: var(--amber); border: 1px solid rgba(245,158,11,.2); }
+
+/* ─── SEMAPHORE ───────────────────────────────────────────── */
+.semaphore-counter { font-size: 32px; font-weight: 700; color: var(--cyan); text-align: center; padding: 10px 0; }
+.sem-btn-row { display: flex; gap: 8px; justify-content: center; margin-top: 8px; }
+
+/* ─── INFO ROW ────────────────────────────────────────────── */
+.info-row { display: flex; justify-content: space-between; font-size: 10px; padding: 5px 0; border-bottom: 1px solid var(--border); }
+.info-row:last-child { border-bottom: none; }
+.info-key { color: var(--muted); }
+.info-val { color: var(--text); }
+.highlight { color: var(--green); }
