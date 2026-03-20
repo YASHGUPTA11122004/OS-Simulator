@@ -1,1 +1,34 @@
+/* ─── CSS VARIABLES — DARK (default) ─────────────────────── */
+:root {
+  --bg: #0a0e17;
+  --surface: #0f1520;
+  --surface2: #151d2e;
+  --surface3: #1a2338;
+  --border: #1e2d45;
+  --border2: #2a3f5f;
+  --green: #00ff88;
+  --green2: #00cc6a;
+  --blue: #3b9eff;
+  --cyan: #06d6d6;
+  --amber: #f59e0b;
+  --red: #ff4757;
+  --purple: #8b5cf6;
+  --text: #e2eaf5;
+  --dim: #7a90ad;
+  --muted: #3d5269;
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'IBM Plex Sans', sans-serif;
+}
 
+/* ─── LIGHT THEME ─────────────────────────────────────────── */
+[data-theme="light"] {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --surface2: #eef1f6;
+  --surface3: #e4e8f0;
+  --border: #d0d7e3;
+  --border2: #b0bcd0;
+  --text: #1a2338;
+  --dim: #4a5e7a;
+  --muted: #8a9ab8;
+}
