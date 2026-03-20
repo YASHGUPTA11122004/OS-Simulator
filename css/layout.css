@@ -1,1 +1,179 @@
+/* ─── RESET ───────────────────────────────────────────────── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* ─── BASE ────────────────────────────────────────────────── */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background .3s, color .3s;
+}
+
+/* Scanline effect */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 2px,
+    rgba(0,255,136,0.012) 2px, rgba(0,255,136,0.012) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ─── SCROLLBAR ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+/* ─── HEADER ──────────────────────────────────────────────── */
+.header {
+  border-bottom: 1px solid var(--border);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--surface);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-dots { display: flex; gap: 6px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot.r { background: #ff5f57; }
+.dot.y { background: #febc2e; }
+.dot.g { background: #28c840; }
+.header-title {
+  font-size: 11px;
+  color: var(--dim);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  flex: 1;
+  text-align: center;
+}
+.header-badge {
+  font-size: 10px;
+  color: var(--green);
+  border: 1px solid var(--green);
+  padding: 3px 8px;
+  border-radius: 2px;
+  letter-spacing: 1px;
+}
+.theme-btn {
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  color: var(--dim);
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  letter-spacing: .5px;
+  transition: all .2s;
+}
+.theme-btn:hover { color: var(--text); border-color: var(--green); }
+
+/* ─── LAYOUT ──────────────────────────────────────────────── */
+.layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: calc(100vh - 49px - 45px);
+}
+
+/* ─── SIDEBAR ─────────────────────────────────────────────── */
+.sidebar {
+  border-right: 1px solid var(--border);
+  background: var(--surface);
+  padding: 16px 0;
+}
+.sidebar-section { margin-bottom: 8px; }
+.sidebar-label {
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 3px;
+  padding: 8px 16px 4px;
+  text-transform: uppercase;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+  cursor: pointer;
+  font-size: 11px;
+  color: var(--dim);
+  transition: all .15s;
+  border-left: 2px solid transparent;
+  letter-spacing: .5px;
+}
+.nav-item:hover { color: var(--text); background: var(--surface2); border-left-color: var(--border2); }
+.nav-item.active { color: var(--green); background: rgba(0,255,136,.06); border-left-color: var(--green); }
+.nav-icon { font-size: 13px; width: 16px; text-align: center; }
+.nav-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--green);
+  margin-left: auto;
+  animation: blink 1.5s infinite;
+}
+@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:.2; } }
+
+/* ─── MAIN ────────────────────────────────────────────────── */
+.main { padding: 24px; overflow-y: auto; }
+.page { display: none; animation: fadeIn .2s ease; }
+.page.active { display: block; }
+@keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+
+/* ─── PAGE HEADER ─────────────────────────────────────────── */
+.page-header { margin-bottom: 24px; }
+.page-title { font-size: 18px; font-weight: 600; color: var(--text); letter-spacing: 1px; }
+.page-sub { font-size: 11px; color: var(--dim); margin-top: 4px; letter-spacing: .5px; }
+.page-line { height: 1px; background: linear-gradient(90deg, var(--green), transparent); margin-top: 12px; }
+
+/* ─── CARDS ───────────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.card-title {
+  font-size: 10px;
+  color: var(--dim);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* ─── TWO COLUMN GRID ─────────────────────────────────────── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media(max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
+
+/* ─── FOOTER ──────────────────────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+.footer a {
+  color: var(--green);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────────── */
+@media(max-width: 700px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .main { padding: 14px; }
+}
