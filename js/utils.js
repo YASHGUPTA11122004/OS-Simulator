@@ -116,7 +116,7 @@ function buildSchedulerUI(containerId, algoFn, extraInputs = '', extraHeader = '
   const c = document.getElementById(containerId);
   c.innerHTML = `
     <div class="card">
-      <div class="card-title">// Add Process</div>
+      <div class="card-title">Add Process</div>
       <div class="input-row">
         <div class="input-group"><div class="input-label">PID</div><input class="input" id="${containerId}-pid" value="P1" placeholder="P1"/></div>
         <div class="input-group"><div class="input-label">Arrival</div><input class="input" id="${containerId}-arr" type="number" value="0" min="0"/></div>
@@ -129,14 +129,14 @@ function buildSchedulerUI(containerId, algoFn, extraInputs = '', extraHeader = '
     </div>
     <div class="two-col">
       <div class="card">
-        <div class="card-title">// Process List</div>
+        <div class="card-title">Process List</div>
         <table class="process-table">
           <thead><tr><th>PID</th><th>Arrival</th><th>Burst</th>${extraHeader}<th></th></tr></thead>
           <tbody id="${containerId}-tbody"></tbody>
         </table>
       </div>
       <div class="card">
-        <div class="card-title">// Metrics</div>
+        <div class="card-title">Metrics</div>
         <div class="metrics-grid" id="${containerId}-metrics">
           <div class="metric"><div class="metric-val">—</div><div class="metric-label">Avg Wait</div></div>
           <div class="metric"><div class="metric-val">—</div><div class="metric-label">Avg TAT</div></div>
@@ -145,13 +145,13 @@ function buildSchedulerUI(containerId, algoFn, extraInputs = '', extraHeader = '
       </div>
     </div>
     <div class="card">
-      <div class="card-title">// Gantt Chart</div>
+      <div class="card-title">Gantt Chart</div>
       <div class="gantt-wrap" id="${containerId}-gantt">
         <div style="color:var(--muted);font-size:11px;">Add processes and click Run to generate Gantt chart.</div>
       </div>
     </div>
     <div class="card">
-      <div class="card-title">// Execution Log</div>
+      <div class="card-title">Execution Log</div>
       ${makeLog(containerId + '-log')}
     </div>`;
 }
