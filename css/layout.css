@@ -29,20 +29,15 @@ body {
   z-index: 100;
 }
 
-/* OS-themed CPU icon instead of mac dots */
+/* OS-themed scheduler icon */
 .header-icon {
   display: flex;
   align-items: center;
-  gap: 6px;
   background: var(--surface2);
   border: 1px solid var(--border2);
   border-radius: 6px;
-  padding: 5px 10px;
+  padding: 6px 10px;
   flex-shrink: 0;
-}
-.header-icon-chip {
-  font-size: 14px;
-  line-height: 1;
 }
 .header-icon-label {
   font-family: var(--mono);
@@ -101,6 +96,35 @@ body {
   font-weight: 500;
 }
 .theme-btn:hover { border-color: var(--blue); color: var(--blue); }
+
+/* ─── BREADCRUMB ──────────────────────────────────────────── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.bc-root {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+.bc-sep {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--border2);
+  font-weight: 400;
+}
+.bc-active {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: .5px;
+  transition: all .2s;
+}
 
 /* ─── LAYOUT ──────────────────────────────────────────────── */
 .layout {
