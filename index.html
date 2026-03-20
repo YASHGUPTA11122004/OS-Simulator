@@ -4,30 +4,26 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Process Management System</title>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-
-  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/variables.css"/>
   <link rel="stylesheet" href="css/layout.css"/>
   <link rel="stylesheet" href="css/components.css"/>
 </head>
 <body>
 
-<!-- ─── HEADER ─────────────────────────────────────────── -->
+<!-- HEADER -->
 <div class="header">
   <div class="header-dots">
-    <div class="dot r"></div>
-    <div class="dot y"></div>
-    <div class="dot g"></div>
+    <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
   </div>
   <div class="header-title">Process Management System</div>
-  <div style="display:flex;align-items:center;gap:10px;">
-    <div class="header-badge">● LIVE</div>
+  <div class="header-right">
+    <div class="live-badge">LIVE</div>
     <button onclick="toggleTheme()" id="theme-btn" class="theme-btn">☀ Light</button>
   </div>
 </div>
 
-<!-- ─── MAIN LAYOUT ────────────────────────────────────── -->
+<!-- LAYOUT -->
 <div class="layout">
 
   <!-- SIDEBAR -->
@@ -58,182 +54,182 @@
     </div>
   </div>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN -->
   <div class="main">
 
     <!-- OVERVIEW -->
     <div class="page active" id="page-overview">
       <div class="page-header">
-        <div class="page-title">SYSTEM OVERVIEW</div>
-        <div class="page-sub">// Interactive OS Process Management Simulator</div>
+        <div class="page-title">System Overview</div>
+        <div class="page-sub">Interactive OS Process Management Simulator — explore scheduling algorithms and synchronization mechanisms</div>
         <div class="page-line"></div>
       </div>
       <div class="overview-grid">
         <div class="ov-card" onclick="showPage('fcfs',document.querySelector('[onclick*=fcfs]'))">
           <div class="ov-icon">→</div>
-          <div class="ov-title">FCFS Scheduling</div>
-          <div class="ov-desc">First Come First Served — non-preemptive, arrival order</div>
+          <div class="ov-title">FCFS</div>
+          <div class="ov-desc">First Come First Served — non-preemptive scheduling in arrival order</div>
         </div>
         <div class="ov-card" onclick="showPage('sjf',document.querySelector('[onclick*=sjf]'))">
           <div class="ov-icon">↓</div>
-          <div class="ov-title">SJF Scheduling</div>
+          <div class="ov-title">SJF</div>
           <div class="ov-desc">Shortest Job First — minimizes average waiting time</div>
         </div>
         <div class="ov-card" onclick="showPage('rr',document.querySelector('[onclick*=rr]'))">
           <div class="ov-icon">↺</div>
           <div class="ov-title">Round Robin</div>
-          <div class="ov-desc">Time-quantum preemptive — fair CPU distribution</div>
+          <div class="ov-desc">Preemptive time-quantum scheduling for fair CPU distribution</div>
         </div>
         <div class="ov-card" onclick="showPage('priority',document.querySelector('[onclick*=priority]'))">
           <div class="ov-icon">★</div>
           <div class="ov-title">Priority</div>
-          <div class="ov-desc">Higher priority processes execute first</div>
+          <div class="ov-desc">Higher priority processes execute first — lower number wins</div>
         </div>
         <div class="ov-card" onclick="showPage('mutex',document.querySelector('[onclick*=mutex]'))">
           <div class="ov-icon">⚿</div>
           <div class="ov-title">Mutex</div>
-          <div class="ov-desc">Mutual exclusion lock — critical section demo</div>
+          <div class="ov-desc">Mutual exclusion binary lock — critical section demo</div>
         </div>
         <div class="ov-card" onclick="showPage('semaphore',document.querySelector('[onclick*=semaphore]'))">
           <div class="ov-icon">◈</div>
           <div class="ov-title">Semaphore</div>
-          <div class="ov-desc">Counting semaphore — wait/signal operations</div>
+          <div class="ov-desc">Counting semaphore — wait() and signal() operations</div>
         </div>
         <div class="ov-card" onclick="showPage('monitor',document.querySelector('[onclick*=monitor]'))">
-          <div class="ov-icon">⬡</div>
+          <div class="ov-icon">⊞</div>
           <div class="ov-title">Monitor</div>
-          <div class="ov-desc">High-level sync construct — condition variables</div>
+          <div class="ov-desc">High-level sync construct with condition variables</div>
         </div>
         <div class="ov-card" onclick="showPage('pcb',document.querySelector('[onclick*=pcb]'))">
           <div class="ov-icon">◫</div>
           <div class="ov-title">PCB Viewer</div>
-          <div class="ov-desc">Process Control Block — complete process state</div>
+          <div class="ov-desc">Process Control Block — kernel process state details</div>
         </div>
         <div class="ov-card" onclick="showPage('queue',document.querySelector('[onclick*=queue]'))">
           <div class="ov-icon">▤</div>
           <div class="ov-title">Process Queue</div>
-          <div class="ov-desc">Ready, waiting, job queue — live visualization</div>
+          <div class="ov-desc">Ready, waiting and job queue — live visualization</div>
         </div>
       </div>
       <div class="card">
-        <div class="card-title">// System Stats</div>
+        <div class="card-title">System Stats</div>
         <div class="metrics-grid">
           <div class="metric"><div class="metric-val">4</div><div class="metric-label">Algorithms</div></div>
           <div class="metric"><div class="metric-val">3</div><div class="metric-label">Sync Methods</div></div>
-          <div class="metric"><div class="metric-val">8</div><div class="metric-label">Modules</div></div>
+          <div class="metric"><div class="metric-val">9</div><div class="metric-label">Modules</div></div>
           <div class="metric"><div class="metric-val">∞</div><div class="metric-label">Simulations</div></div>
         </div>
       </div>
     </div>
 
-    <!-- SCHEDULING PAGES -->
+    <!-- FCFS -->
     <div class="page" id="page-fcfs">
       <div class="page-header">
-        <div class="page-title">FCFS — FIRST COME FIRST SERVED</div>
-        <div class="page-sub">// Non-preemptive · Processes execute in arrival order</div>
+        <div class="page-title">First Come First Served</div>
+        <div class="page-sub">Non-preemptive · Processes execute in arrival order · Simple but may cause convoy effect</div>
         <div class="page-line"></div>
       </div>
       <div id="fcfs-content"></div>
     </div>
 
+    <!-- SJF -->
     <div class="page" id="page-sjf">
       <div class="page-header">
-        <div class="page-title">SJF — SHORTEST JOB FIRST</div>
-        <div class="page-sub">// Non-preemptive · Minimizes average waiting time</div>
+        <div class="page-title">Shortest Job First</div>
+        <div class="page-sub">Non-preemptive · Picks the process with shortest burst time — minimizes average waiting time</div>
         <div class="page-line"></div>
       </div>
       <div id="sjf-content"></div>
     </div>
 
+    <!-- ROUND ROBIN -->
     <div class="page" id="page-rr">
       <div class="page-header">
-        <div class="page-title">ROUND ROBIN</div>
-        <div class="page-sub">// Preemptive · Time quantum based fair scheduling</div>
+        <div class="page-title">Round Robin</div>
+        <div class="page-sub">Preemptive · Each process gets a fixed time quantum — ensures fair CPU allocation</div>
         <div class="page-line"></div>
       </div>
       <div id="rr-content"></div>
     </div>
 
+    <!-- PRIORITY -->
     <div class="page" id="page-priority">
       <div class="page-header">
-        <div class="page-title">PRIORITY SCHEDULING</div>
-        <div class="page-sub">// Non-preemptive · Lower number = higher priority</div>
+        <div class="page-title">Priority Scheduling</div>
+        <div class="page-sub">Non-preemptive · Lower priority number = higher priority — may cause starvation</div>
         <div class="page-line"></div>
       </div>
       <div id="priority-content"></div>
     </div>
 
-    <!-- SYNC PAGES -->
+    <!-- MUTEX -->
     <div class="page" id="page-mutex">
       <div class="page-header">
-        <div class="page-title">MUTEX — MUTUAL EXCLUSION</div>
-        <div class="page-sub">// Binary lock · Only one thread in critical section at a time</div>
+        <div class="page-title">Mutex — Mutual Exclusion</div>
+        <div class="page-sub">Binary lock · Only one thread can enter the critical section at a time</div>
         <div class="page-line"></div>
       </div>
       <div id="mutex-content"></div>
     </div>
 
+    <!-- SEMAPHORE -->
     <div class="page" id="page-semaphore">
       <div class="page-header">
-        <div class="page-title">SEMAPHORE</div>
-        <div class="page-sub">// Counting semaphore · wait() decrements, signal() increments</div>
+        <div class="page-title">Semaphore</div>
+        <div class="page-sub">Counting semaphore · wait() decrements counter, signal() increments — controls resource access</div>
         <div class="page-line"></div>
       </div>
       <div id="semaphore-content"></div>
     </div>
 
+    <!-- MONITOR -->
     <div class="page" id="page-monitor">
       <div class="page-header">
-        <div class="page-title">MONITOR</div>
-        <div class="page-sub">// High-level synchronization · Condition variables + mutual exclusion</div>
+        <div class="page-title">Monitor</div>
+        <div class="page-sub">High-level synchronization · Condition variables with built-in mutual exclusion</div>
         <div class="page-line"></div>
       </div>
       <div id="monitor-content"></div>
     </div>
 
-    <!-- SYSTEM PAGES -->
+    <!-- PCB -->
     <div class="page" id="page-pcb">
       <div class="page-header">
-        <div class="page-title">PROCESS CONTROL BLOCK</div>
-        <div class="page-sub">// Complete process state information maintained by OS kernel</div>
+        <div class="page-title">Process Control Block</div>
+        <div class="page-sub">Complete process state information maintained by the OS kernel for each running process</div>
         <div class="page-line"></div>
       </div>
       <div id="pcb-content"></div>
     </div>
 
+    <!-- QUEUE -->
     <div class="page" id="page-queue">
       <div class="page-header">
-        <div class="page-title">PROCESS QUEUE</div>
-        <div class="page-sub">// Ready queue, waiting queue, and job queue visualization</div>
+        <div class="page-title">Process Queue</div>
+        <div class="page-sub">Ready queue, waiting queue, and job queue — visualize how processes move through the OS</div>
         <div class="page-line"></div>
       </div>
       <div id="queue-content"></div>
     </div>
 
-  </div><!-- /main -->
-</div><!-- /layout -->
+  </div>
+</div>
 
-<!-- ─── FOOTER ──────────────────────────────────────────── -->
+<!-- FOOTER -->
 <div class="footer">
-  <span>PROCESS MANAGEMENT SYSTEM — OS Simulator</span>
+  <span>Process Management System — OS Simulator</span>
   <span>Built by <a href="https://portfolio-sdab.vercel.app" target="_blank">Yash Gupta</a> · B.Tech CSE · GEHU</span>
 </div>
 
-<!-- ─── JAVASCRIPT (order matters) ─────────────────────── -->
+<!-- JS — order matters -->
 <script src="js/utils.js"></script>
-
-<!-- Scheduling -->
 <script src="js/scheduling/fcfs.js"></script>
 <script src="js/scheduling/sjf.js"></script>
 <script src="js/scheduling/roundrobin.js"></script>
 <script src="js/scheduling/priority.js"></script>
-
-<!-- Sync -->
 <script src="js/sync/mutex.js"></script>
 <script src="js/sync/semaphore.js"></script>
 <script src="js/sync/monitor.js"></script>
-
-<!-- System -->
 <script src="js/system/pcb-queue.js"></script>
 
 </body>
