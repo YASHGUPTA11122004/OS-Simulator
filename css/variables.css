@@ -1,34 +1,39 @@
-/* ─── CSS VARIABLES — DARK (default) ─────────────────────── */
+/* ─── DARK THEME (default) ───────────────────────────────── */
 :root {
-  --bg: #0a0e17;
-  --surface: #0f1520;
-  --surface2: #151d2e;
-  --surface3: #1a2338;
-  --border: #1e2d45;
-  --border2: #2a3f5f;
-  --green: #00ff88;
-  --green2: #00cc6a;
-  --blue: #3b9eff;
-  --cyan: #06d6d6;
-  --amber: #f59e0b;
-  --red: #ff4757;
-  --purple: #8b5cf6;
-  --text: #e2eaf5;
-  --dim: #7a90ad;
-  --muted: #3d5269;
+  --bg:       #0d0f14;
+  --surface:  #13161e;
+  --surface2: #181c26;
+  --surface3: #1e2333;
+  --border:   #232840;
+  --border2:  #2e3655;
+
+  --blue:    #4f8ef7;
+  --blue2:   #3b7de8;
+  --purple:  #7c6af7;
+  --cyan:    #38bdf8;
+  --green:   #34d399;
+  --amber:   #fbbf24;
+  --red:     #f87171;
+
+  --text:    #e8ecf4;
+  --dim:     #8892a4;
+  --muted:   #3d4560;
+
   --mono: 'IBM Plex Mono', monospace;
   --sans: 'IBM Plex Sans', sans-serif;
+  --radius: 8px;
+  --radius-sm: 5px;
 }
 
 /* ─── LIGHT THEME ─────────────────────────────────────────── */
 [data-theme="light"] {
-  --bg: #f4f6f9;
-  --surface: #ffffff;
-  --surface2: #eef1f6;
-  --surface3: #e4e8f0;
-  --border: #d0d7e3;
-  --border2: #b0bcd0;
-  --text: #1a2338;
-  --dim: #4a5e7a;
-  --muted: #8a9ab8;
+  --bg:       #f7f8fc;
+  --surface:  #ffffff;
+  --surface2: #f0f2f8;
+  --surface3: #e8ebf4;
+  --border:   #dde1ef;
+  --border2:  #c8cfe0;
+  --text:     #111827;
+  --dim:      #4b5675;
+  --muted:    #9aa3be;
 }
