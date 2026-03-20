@@ -35,7 +35,7 @@
     <div class="sidebar-section">
       <div class="sidebar-label">System</div>
       <div class="nav-item active" onclick="showPage('overview',this)">
-        <span class="nav-icon">⬡</span> Overview <span class="nav-dot"></span>
+        <span class="nav-icon">◉</span> Overview <span class="nav-dot"></span>
       </div>
     </div>
     <div class="sidebar-section">
@@ -49,7 +49,7 @@
       <div class="sidebar-label">Synchronization</div>
       <div class="nav-item" onclick="showPage('mutex',this)"><span class="nav-icon">⚿</span> Mutex</div>
       <div class="nav-item" onclick="showPage('semaphore',this)"><span class="nav-icon">◈</span> Semaphore</div>
-      <div class="nav-item" onclick="showPage('monitor',this)"><span class="nav-icon">⬡</span> Monitor</div>
+      <div class="nav-item" onclick="showPage('monitor',this)"><span class="nav-icon">⊞</span> Monitor</div>
     </div>
     <div class="sidebar-section">
       <div class="sidebar-label">Process</div>
@@ -109,14 +109,19 @@
           <div class="ov-title">PCB Viewer</div>
           <div class="ov-desc">Process Control Block — complete process state</div>
         </div>
+        <div class="ov-card" onclick="showPage('queue',document.querySelector('[onclick*=queue]'))">
+          <div class="ov-icon">▤</div>
+          <div class="ov-title">Process Queue</div>
+          <div class="ov-desc">Ready, waiting, job queue — live visualization</div>
+        </div>
       </div>
       <div class="card">
         <div class="card-title">// System Stats</div>
         <div class="metrics-grid">
           <div class="metric"><div class="metric-val">4</div><div class="metric-label">Algorithms</div></div>
           <div class="metric"><div class="metric-val">3</div><div class="metric-label">Sync Methods</div></div>
-          <div class="metric"><div class="metric-val">Live</div><div class="metric-label">Simulation</div></div>
-          <div class="metric"><div class="metric-val">Gantt</div><div class="metric-label">Visualization</div></div>
+          <div class="metric"><div class="metric-val">8</div><div class="metric-label">Modules</div></div>
+          <div class="metric"><div class="metric-val">∞</div><div class="metric-label">Simulations</div></div>
         </div>
       </div>
     </div>
